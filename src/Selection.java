@@ -24,7 +24,7 @@ public class Selection {
 
     public static int maxIndex(int[] arr, int s, int e) {
         int max = s;
-        for(int i=0; i<= e ; i++){
+        for(int i=s+1; i<= e ; i++){
             if(arr[max]<arr[i]){
                 max=i;
             }
