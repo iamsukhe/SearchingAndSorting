@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Cyclic {
     public static void main(String[] args) {
-        int [] array = {3,2,1};
+        int [] array = {7,8,9,11,12};
         cyclic(array);
 
         System.out.println(Arrays.toString(array));
@@ -11,10 +11,11 @@ public class Cyclic {
     public static void cyclic(int[] arr ){
         int i=0;
         while( i < arr.length){
-            if(i==arr[i]-1){
-                i++;
+            int correctIndex = arr[i]-1;
+            if( correctIndex>=0 && correctIndex<arr.length && arr[i]!=arr[correctIndex]  ){
+                swap(arr,i,correctIndex);
             }else{
-                swap(arr,i,arr[i]-1);
+                i++;
             }
         }
     }
